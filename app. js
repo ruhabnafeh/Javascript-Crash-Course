@@ -78,3 +78,167 @@ bought && signedIn ? console.log('show the video') : console.log('hide the video
 
 
 
+//LOOPS//
+
+//DRY = Don't repeat yourself
+
+let count = 1
+while (count <= 100) {
+    count++
+    console.log(count)
+}
+
+for (let i = 1; i <= 100; i++) {
+    console.log(i)
+}
+
+//Problems//
+
+for (let i = 1; i <= 20; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log(`${i} -> Frontend Simplified`)
+    }
+    else if (i % 3 === 0) {
+        console.log(`${i} -> Frontend`)
+    }
+    else if (i % 5 === 0) {
+        console.log(`${i} -> Simplified`)
+    }
+    else {
+        console.log(`${i} -> ${i}`)
+    }
+}
+
+const str = 'Frontend Simplified'
+
+for (i = 0; i < str.length; i++) {
+    console.log(str[i])
+}
+
+
+//FUNCTIONS//
+
+function welcomeUserToFES(firstName, lastName) {
+    console.log(`Welcome back home! ${firstName} ${lastName}`)
+}
+
+welcomeUserToFES('ruhab', 'nafeh');
+welcomeUserToFES('radia', 'aimen');
+welcomeUserToFES('hi', 'how are u');
+
+
+// Problems
+// 1st way
+function convertCelciusToFahrenheit(number) {
+    let fah = number * 1.8 + 32
+    return fah
+}
+
+console.log(convertCelciusToFahrenheit(0))
+console.log(convertCelciusToFahrenheit(10))
+console.log(convertCelciusToFahrenheit(30))
+
+// 2nd way
+
+// const convertCelciusToFahrenheit = (number) => {
+//     return number * 1.8 + 32
+// }
+
+// console.log(convertCelciusToFahrenheit(0))
+
+
+
+//ARRAYS//
+
+let arr = [20, 30, 40, 50, 100]
+
+
+console.log(arr[0]);
+console.log(arr[arr.length - 1])
+
+arr.push(200)
+console.log(arr)
+
+// let newArr = arr.filter((sign) => {
+//     console.log(sign)
+//     if (sign != 50) {
+//         return true
+//     }
+// })
+
+// All this can be done in one line
+
+let newArr = arr.filter(element => element < 50)
+
+console.log(newArr)
+
+// Problems
+// WITH using the filter method
+// 1
+let grades = ['A+', 'A', 'FAIL']
+let goodGrades = grades.filter(element => element !== 'FAIL')
+console.log(goodGrades)
+
+
+// 2
+let grades2 = ['FAIL', 'FAIL', 'B']
+let alrGrades = grades2.filter(element2 => element2 !== 'FAIL')
+console.log(alrGrades)
+
+// 3
+let grades3 = ['FAIL']
+let badGrades = grades3.filter(element3 => element3 === 'FAIL')
+console.log(badGrades)
+////////////////////
+
+// WITHOUT using the Array filter method
+
+let results = ['A+', 'A', 'FAIL']
+let goodResults = []
+
+for (let i = 0; i < results.length; i++) {
+    if (results[i] !== 'FAIL') {
+        goodResults.push(results[i])
+    }
+}
+console.log(goodResults)
+// 
+
+// ARRAYS II
+
+let array = [1, 4, 9, 16]
+
+let newArray = array.map(hehe => undefined)
+console.log(newArray)
+
+// Problems II
+// WITH using the map method
+// 1
+let dollars = [1, 5, 10, 3]
+let cents = dollars.map(pesa => pesa *100) 
+console.log(cents)
+
+// 2
+let dollars2 = [0, 10, 20]
+let cents2 = dollars2.map(elem => elem *100)
+console.log(cents2)
+
+// WITHOUT using the map method, i am trying to convert dollars to cents
+
+// 1
+let dollars3 = [1, 5, 10, 3]
+let cents3 = []
+
+for (i = 0; i < dollars3.length; i++) {
+    cents3.push(dollars3[i] * 100)
+}
+console.log(cents3)
+
+// 2 
+let dollars4 = [0, 10, 20, 30]
+let cents4 = []
+
+for (i = 0; i < dollars4.length; i++) {
+    cents4.push(dollars4[i] * 100)
+}
+console.log(cents4)
